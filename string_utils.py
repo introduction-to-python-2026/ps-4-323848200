@@ -17,7 +17,6 @@ def split_at_digit(formula):
     for i, char in enumerate(formula):
         if char.isdigit():
             prefix = formula[:i]
-            numeric_part = int(formula[i:])
-            return prefix, numeric_part
+            return prefix, int(formula[i:])
             
     return formula, 1
