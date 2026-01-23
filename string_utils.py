@@ -1,4 +1,4 @@
-def split_before_each_uppercases(formula):
+def split_before_each_uppercase(formula):
     if not formula:
         return []
     
@@ -8,14 +8,16 @@ def split_before_each_uppercases(formula):
         if formula[end].isupper():
             split_formula.append(formula[start:end])
             start = end
+            
     split_formula.append(formula[start:])
     return split_formula
 
 
-def split_at_first_digit(formula):
+def split_at_digit(formula):
     for i, char in enumerate(formula):
         if char.isdigit():
             prefix = formula[:i]
             numeric_part = int(formula[i:])
             return prefix, numeric_part
-    return formula, 1
+            
+    return formula, 11
