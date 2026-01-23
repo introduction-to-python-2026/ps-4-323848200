@@ -20,4 +20,4 @@ def split_at_digit(formula):
             numeric_part = int(formula[i:])
             return prefix, numeric_part
             
-    return formula, 11
+    return formula, 1
