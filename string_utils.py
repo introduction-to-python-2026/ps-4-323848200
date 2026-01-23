@@ -1,5 +1,4 @@
 def split_before_each_uppercase(formula):
-    """Splits a string before every uppercase letter."""
     if not formula:
         return []
     
@@ -15,11 +14,10 @@ def split_before_each_uppercase(formula):
 
 
 def split_at_digit(formula):
-    """Splits a string into a prefix and the first digit onward as an integer."""
     for i, char in enumerate(formula):
         if char.isdigit():
             prefix = formula[:i]
-            number = int(formula[i:])
-            return prefix, number
+            number_part = formula[i:]
+            return prefix, int(number_part)
             
     return formula, 1
