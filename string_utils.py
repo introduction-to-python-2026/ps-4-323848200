@@ -1,29 +1,28 @@
-def split_at_digit(formula):
+def split_at_first_digit(formula):
     # מחפשים את האינדקס של הספרה הראשונה
     for i, char in enumerate(formula):
         if char.isdigit():
-            # prefix: הכל לפני הספרה
+            # הקידומת לפני הספרה, והמספר מהספרה והלאה
             prefix = formula[:i]
-            # number: מהספרה והלאה כ-integer
             number = int(formula[i:])
             return prefix, number
             
-    # אם לא נמצאו ספרות, מחזירים את המחרוזת המקורית ו-1
+    # אם לא נמצאו ספרות
     return formula, 1
 
 
-def split_before_each_uppercase(formula):
+def split_before_each_uppercases(formula):
     if not formula:
         return []
     
     parts = []
     start = 0
-    # רצים מהתו השני כדי לזהות אותיות גדולות שמתחילות איבר חדש
+    # רצים מהתו השני כדי לזהות אותיות גדולות
     for i in range(1, len(formula)):
         if formula[i].isupper():
             parts.append(formula[start:i])
             start = i
             
-    # הוספת החלק האחרון שנשאר
+    # הוספת החלק האחרון
     parts.append(formula[start:])
     return parts
